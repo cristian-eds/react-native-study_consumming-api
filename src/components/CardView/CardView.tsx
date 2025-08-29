@@ -8,7 +8,7 @@ import { CAR_ASSETS_BASE_URL } from '../../constants/car';
 import BuyButton from '../BuyButton/BuyButton';
 import { useEffect, useState } from 'react';
 import { CarModel } from './props';
-import { loadCarData } from './actions';
+import { handleNextItem, handlePreviousItem, loadCarData } from './actions';
 
 const CardView = () => {
 
@@ -46,9 +46,9 @@ const CardView = () => {
 
     const renderPriceControls = () => (
         <View style={styles.priceLabelContainer}>
-            <Button title='<' color={'#01A6B3'} onPress={() => {}}/>
+            <Button title='<' color={'#01A6B3'} onPress={() => handlePreviousItem(carData, setCarData)}/>
             <Text style={styles.priceLabel}>{carData?.price}</Text>
-            <Button title='>' color={'#01A6B3'} onPress={() => {}}/>
+            <Button title='>' color={'#01A6B3'} onPress={() => {handleNextItem(carData, setCarData)}}/>
         </View>
     )
 
