@@ -6,8 +6,19 @@ import Logo from '../../../assets/logo.png';
 import Divider from '../Divider/Divider';
 import { CAR_ASSETS_BASE_URL } from '../../constants/car';
 import BuyButton from '../BuyButton/BuyButton';
+import { useEffect, useState } from 'react';
+import { CarModel } from './props';
+import { loadCarData } from './actions';
 
 const CardView = () => {
+
+    const [carData, setCarData] = useState<CarModel | null>(null);
+
+    useEffect(() => {
+        (async () => {
+            await loadCarData(1, setCarData);
+        })
+    },[])
 
     const renderLogoBox = () => (
         <View style={styles.containerLogo}>
