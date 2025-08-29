@@ -12,7 +12,6 @@ export const fetchGetCarData = async (id: number) => {
             await axios.get<ApiResponse>(CAR_API_BASE_URL);
 
         const carData = response.data.cars.find(car => car.id === id) || null;
-
         return carData;
     } catch (error) {
         console.log('Error retrieving car data: ',error)

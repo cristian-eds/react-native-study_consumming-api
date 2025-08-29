@@ -15,10 +15,13 @@ const CardView = () => {
     const [carData, setCarData] = useState<CarModel | null>(null);
 
     useEffect(() => {
-        (async () => {
-            await loadCarData(1, setCarData);
-        })
+        const fetch = async () => {
+            await loadCarData(2, setCarData);
+        }
+        fetch();
     },[])
+
+    
 
     const renderLogoBox = () => (
         <View style={styles.containerLogo}>
@@ -29,7 +32,7 @@ const CardView = () => {
     const renderCarDetail = () => (
         <View style={{ alignItems: 'center' }}>
             <Text style={styles.carBrand}>Lamborguini</Text>
-            <Text style={styles.carName}>Model</Text>
+            <Text style={styles.carName}>{carData?.carName}</Text>
         </View>
     )
 
@@ -37,14 +40,14 @@ const CardView = () => {
         <Image
             style={styles.image}
             source={
-                { uri: `${CAR_ASSETS_BASE_URL}2.png`}
+                { uri: `${CAR_ASSETS_BASE_URL}${carData?.id}.png`}
             } />
     )
 
     const renderPriceControls = () => (
         <View style={styles.priceLabelContainer}>
             <Button title='<' color={'#01A6B3'} onPress={() => {}}/>
-            <Text style={styles.priceLabel}>VALOR</Text>
+            <Text style={styles.priceLabel}>{carData?.price}</Text>
             <Button title='>' color={'#01A6B3'} onPress={() => {}}/>
         </View>
     )

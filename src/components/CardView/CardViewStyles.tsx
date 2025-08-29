@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     priceLabelContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        paddingBottom: 10,
+        paddingBottom: 20,
         alignItems: 'center',
         marginTop: 10
     },
