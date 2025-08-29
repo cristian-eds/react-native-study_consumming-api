@@ -1,6 +1,7 @@
 import { Text, View } from "react-native"
 
 import {styles} from './GarageScreenStyles'
+import CardView from "../../components/CardView/CardView"
 
 const GarageScreen = () => {
   return (
@@ -10,8 +11,8 @@ const GarageScreen = () => {
           <View style={[styles.triangleCorner, styles.topRight]}></View>
           <View style={[styles.triangleCorner, styles.leftBottom]}></View>
           <View style={[styles.triangleCorner, styles.rightBottom]}></View>
+          <CardView />
         </View>
-        <Text>Works</Text>
     </View>
   )
 }
