@@ -5,6 +5,7 @@ import { styles } from './CardViewStyles'
 import Logo from '../../../assets/logo.png';
 import Divider from '../Divider/Divider';
 import { CAR_ASSETS_BASE_URL } from '../../constants/car';
+import BuyButton from '../BuyButton/BuyButton';
 
 const CardView = () => {
 
@@ -36,6 +37,7 @@ const CardView = () => {
             {renderCarDetail()}
             {renderCarImage()}
             <Divider />
+            <BuyButton />
         </View>
     )
 }
